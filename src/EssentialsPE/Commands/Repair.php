@@ -1,5 +1,4 @@
 <?php
-
 declare(strict_types = 1);
 
 namespace EssentialsPE\Commands;
@@ -71,17 +70,17 @@ class Repair extends BaseCommand{
                 $sender->sendMessage(TextFormat::RED . "[Error] §2This item can't be repaired!");
                 return false;
 	    }
-	}else{
 	foreach($sender->getInventory()->getContents() as $i => $item) {
 	    if($this->getAPI()->isRepairable($item)) {
                 $sender->getInventory()->getItemInHand();
 	        $item->setDamage(0, true);
 	        $sender->getInventory()->setItem($i, $item, true);
-                $m = TextFormat::GREEN . "§dItem successfully repaired!");
+                $m = TextFormat::GREEN . "§dItem successfully repaired!";
 	    }
         }
         $sender->sendMessage($m);
         return true;
         }
     }
+  }
 }
