@@ -78,5 +78,6 @@ class Repair extends BaseCommand{
         }
         $sender->sendMessage($m);
         return true;
+        }
     }
 }
