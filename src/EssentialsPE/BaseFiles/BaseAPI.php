@@ -1383,7 +1383,7 @@ class BaseAPI{
      *
      * @return Player|OfflinePlayer
      */
-    public function getOfflinePlayer(string $name): IPlayer{
+    public function getOfflinePlayer(string $name): Player{
         $player = $this->getPlayer($name);
         if($player === false){
             $player = new OfflinePlayer($this->getServer(), strtolower($name));
